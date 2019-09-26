@@ -1,0 +1,71 @@
+<!Doctype html>
+<meta charset = UTF-8/>
+<title>求方差</title>
+<body>
+    <center>
+    <font size=10>
+    <p>
+    <script>
+        //版权声明
+        alert("求方差小程序由天选之人制作");
+        
+        //计算平均值
+        var length = prompt("输入数字个数");
+        length = Number(length);
+        var num;
+        var numTimer = 1;
+        var mathTimer;
+        var expression = Array();
+        for(var i = length ; i > 0 ; i --)
+        {
+            num = prompt("输入第" + numTimer + "个数字");
+            numTimer += 1;
+            num = Number(num);
+            expression.push(num)
+        };
+        mathTimer = 0;
+        var total = 0;
+        for(var i1 = length ; i1 > 0 ;i1 --)
+        {
+            total += expression[mathTimer];
+            mathTimer ++
+        };
+        mathTimer = 0;
+        var average = total / length;
+        document.write(expression.join(" , "));
+        document.write("<br/>" + "总和: " + total);
+        document.write("<br/>" + "长度: " + length);
+        document.write("<br/>" + "平均数: " + average);
+    </script>
+    </p>
+
+    <p>
+    <script>
+        //计算方差
+        var math;
+        var expression2 = Array();
+        for(var i2 = length ; i2 > 0 ; i2 --)
+        {
+            math = expression[mathTimer] - average;
+            var math2 = Math.pow(math,2);
+            expression2.push(math2);
+            mathTimer ++
+        };
+        mathTimer = 0;
+        var math3 = 0;
+        document.write("( " + expression2.join(" + ") + " ) / " + length);
+        for(var i3 = length ; i3 > 0 ; i3--)
+        {
+            math3 += expression2[mathTimer];
+            mathTimer ++
+        };
+        var result = math3 / length;
+        document.write(" = " + result);
+        document.write("<br/>" + "——————————————————————————<br/>");
+        document.write("答: " + expression.join(" , ") + "的方差为:  " + result)
+    </script>
+    </p>
+</font>
+</center>
+</body>
+</html>

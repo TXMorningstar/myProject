@@ -1,1 +1,1 @@
-<a href="https://sf-chen.github.io/baiduweb/求方差.html">demo</a>
+<a href="https://txmorningstar.github.io/myProject/variance.html">CLickMe</a>

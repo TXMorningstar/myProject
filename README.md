@@ -1,2 +1,1 @@
-# myProject
-根据要求输入参数即可求方差<br/>这是我的第一个代码，写的不好好尽请见谅
+<a href="https://txmorningstar.github.io/myProject/求方差.html">ClickMe</a>

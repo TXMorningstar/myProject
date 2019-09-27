@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset=utf-8/>
+<title>等差数列求解v0.0.2</title>
+<body><font size=10><center>
+    <p>
+    <script>
+        //函数预加载
+
+        //方案一：已知首项、公差，求aₙ
+        function method1(m1a1 , m1d , m1n){
+            m1result = m1a1 + (m1n - 1) * m1d;
+            return m1result
+        };
+
+        //方案二：
+    </script>
+    </p>
+    
+    <p>
+    <script>
+        var result;
+        //提示说明
+        alert('欢迎使用TxMorningstar制作的"等差数列求解工具"，你只需要在下一个出现的窗口中通过输入数字来选择你要使用的求解模式然后根据提示输入参数即可计算结果');
+        //选择算法
+        var pattern = prompt(
+            '输入一个数字来选择算法 \n'+
+            '1 已知首项、公差求aₙ \n'+
+            '2 已知xx求xx \n'+
+            '3 已知xx求xx \n');
+        if(pattern == 1){
+            alert('求解模式：已知首项、公差求aₙ');
+            var a1 = Number(prompt('输入首项a₁的值'));
+            var d = Number(prompt('输入公差d的值'));
+            var n = Number(prompt('输入你想求出的数字aₙ的n的值'));
+            result = method1(m1a1 = a1 , m1d = d , m1n = n);
+            document.write('已知a₁=' + a1 + ', d=' + d + ',<br/>当n=' + n + '时，aₙ=' + result)
+        };
+        if(pattern == 2){
+            alert('检测到选项2')
+        };
+        if(pattern == 3){
+            alert('检测到选项3')
+        };
+    </script>
+    </p>
+</center></font></body>
+</html>

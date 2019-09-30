@@ -5,7 +5,7 @@
     <p>
     <script>
         //函数预加载
-        //公式一：已知首项、公差，求aₙ
+        //公式一：已知首项、公差，求an
         function method1(m1a1 , m1d , m1n){
             var m1result = m1a1 + (m1n - 1) * m1d;
             return m1result
@@ -15,6 +15,11 @@
             var m2an = method1(m1a1 = m2a1 , m1d = m2d , m1n = m2n);
             var m2result = (m2n * (m2a1 + m2an)) / 2;
             return m2result
+        };
+        //公式三:已知an，公差求首项
+        function method3(m3an , m3n , m3d){
+            var m3result = m3an - (m3n - 1) * d;
+            return m3result
         }
     </script>
     </p>
@@ -28,7 +33,7 @@
             '输入一个数字来选择算法 \n'+
             '1 已知首项a₁、公差d求第n项aₙ的值 \n'+
             '2 已知首项a₁、公差d求前n项总和Sₙ \n'+
-            '3 已知xx求xx \n');
+            '3 已知第n项的值aₙ和公差d求首项a₁ \n');
         if(pattern == 1){
             alert('求解模式：已知首项a₁、公差d求第n项旳值aₙ');
             var a1 = Number(prompt('输入首项a₁的值'));
@@ -47,7 +52,12 @@
             document.write('Sₙ=n(a₁+aₙ/2) = ' + result + '<br/>')
         };
         if(pattern == 3){
-            alert('检测到选项3')
+            alert('求解模式:已知第n项aₙ的值和公差d求首项a₁');
+            var an = prompt('请输入第n项数字aₙ的值');
+            var n = prompt('请输入第n项的n的值');
+            var d = prompt('请输入公差d的值');
+            result = method3(m3an = an , m3n = n , m3d = d);
+            document.write('已知:aₙ=' + an + ',n=' + n + ',d=' + d +', a₁=' + result)
         };
     </script>
     </p>

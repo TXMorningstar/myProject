@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <meta charset=utf-8/>
-<title>等差数列求解v0.1.1</title>
+<title>等差数列求解v0.5.0</title>
 <body><font size=10><center>
     <p>
     <script>
         //函数预加载
-        //公式一：已知首项、公差，求an
+        //公式一：已知a1、d，求an
         function method1(m1a1 , m1d , m1n){
             var m1result = m1a1 + (m1n - 1) * m1d;
             return m1result
         };
-        //公式二：已知首项、公差，求总和
+        //公式二：已知a1、d，求Sn
         function method2(m2a1 , m2d , m2n){
             var m2an = method1(m1a1 = m2a1 , m1d = m2d , m1n = m2n);
             var m2result = (m2n * (m2a1 + m2an)) / 2;
             return m2result
         };
-        //公式三:已知an，公差求首项
+        //公式三:已知an,d求a1
         function method3(m3an , m3n , m3d){
             var m3result = m3an - (m3n - 1) * d;
             return m3result
+        };
+        //公式四:已知an、Sn，求a1
+        function method4(m4n , m4an , m4Sn){
+            var m4math1 = m4Sn - (m4an * n) / 2
+            var m4result = m4math1 * 2 / n;
+            return m4result
+        };
+        //公式五:已知a1、an求d
+        function method5(m5a1 , m5an , m5n){
+            var m5result = (m5a1 - m5an) / (1 - m5n);
+            return m5result
         }
     </script>
     </p>
@@ -33,7 +44,9 @@
             '输入一个数字来选择算法 \n'+
             '1 已知首项a₁、公差d求第n项aₙ的值 \n'+
             '2 已知首项a₁、公差d求前n项总和Sₙ \n'+
-            '3 已知第n项的值aₙ和公差d求首项a₁ \n');
+            '3 已知第n项的值aₙ和公差d求首项a₁ \n'+
+            '4 已知aₙ和前n项的总和Sₙ，求首项a₁和公差d \n'+
+            '5 已知aₙ和前n项的总和Sₙ，求前x项的和Sₓ \n');
         if(pattern == 1){
             alert('求解模式：已知首项a₁、公差d求第n项旳值aₙ');
             var a1 = Number(prompt('输入首项a₁的值'));
@@ -57,8 +70,28 @@
             var n = prompt('请输入第n项的n的值');
             var d = prompt('请输入公差d的值');
             result = method3(m3an = an , m3n = n , m3d = d);
-            document.write('已知:aₙ=' + an + ',n=' + n + ',d=' + d +', a₁=' + result)
+            document.write('已知:aₙ=' + an + ',n=' + n + ',d=' + d +'<br/> a₁=' + result)
         };
+        if(pattern == 4){
+            alert('求解模式：已知aₙ和前n项的总和Sₙ，求首项a₁和公差d');
+            var n = prompt('请输入第n项的n的值');
+            var an = prompt('请输入第n项数字aₙ的值');
+            var Sn = prompt('请输入前n项总和Sₙ的值');
+            var a1 = method4(m4n = n , m4an = an , m4Sn = Sn);
+            var d = method5(m5a1 = a1 , m5an = an , m5n = n);
+            document.write('已知Sₙ=' + Sn + ', n=' + n + 'aₙ=' + an + '<br/> a1=' + a1 + ', d=' + d)
+        };
+        if(pattern == 5){
+            alert('求解模式:已知aₙ和前n项的总和Sₙ，求前x项的和Sₓ');
+            var n = prompt('请输入第n项的n的值');
+            var an = prompt('请输入第n项数字aₙ的值');
+            var Sn = prompt('请输入前n项总和Sₙ的值');
+            var x = prompt('请输入Sₓ里ₓ的值');
+            var a1 = method4(m4n = n , m4an = an , m4Sn = Sn);
+            var d = method5(m5a1 = a1 , m5an = an , m5n = n);
+            result = method2(m2a1 = a1, m2d = d, m2n = x);
+            document.write('已知Sₙ=' + Sn + ', n=' + n + 'aₙ=' + an + '<br/> Sₓ=' + result)
+        }
     </script>
     </p>
 </center></font></body>

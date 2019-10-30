@@ -1,0 +1,38 @@
+<!Doctype html>
+<title>寝室内务分配方案</title>
+<body><font size = "10"><center>
+    <script>
+        var array=new Array(); 
+        for(var i = 0 ; ; i++){
+            if(array.length<6){
+                generateRandom(6); 
+            }
+            else{
+                break;
+            }
+        }
+        for(var i = 0 ; i < array.length; i++){
+            document.write(array[i]);
+        }
+        function generateRandom(count){
+            var rand = parseInt(Math.random()*count);
+            for(var i = 0 ; i < array.length; i++){
+                if(array[i] == rand){
+                    return false;
+                }
+            }
+            array.push(rand);
+        }
+        //输出随机数
+        document.write("<br>")
+        var cout = Array(6)
+        cout[array[0]] = "王易德"
+        cout[array[1]] = "王子寒"
+        cout[array[2]] = "张志豪"
+        cout[array[3]] = "柳子昊"
+        cout[array[4]] = "徐上钧"
+        cout[array[5]] = "张鼎浩"
+        document.write("扫地:" + cout[0] + "<br/>" + "桌面:" + cout[1] + "<br/>" + "洗漱台:" + cout[2] + "<br/>" + "鞋椅:" + cout[3] + "<br/>" + "检查:" + cout[4] + "<br/>" + "拖地" + cout[5])
+    </script>
+</font></center></body>
+</html>

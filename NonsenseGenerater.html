@@ -1,0 +1,29 @@
+<!doctype html>
+<title>营销号生成器</title>
+<body>
+    <font size=10>
+        <center>
+            <p>
+        欢迎使用憨批营销号文章生成器，点击开始按钮以生成憨批文章
+            </p>
+            <button id='start' style="width: 200px; height: 60px;" >开始生成</button>
+            <script>
+                var button = document.getElementById('start')
+                button.onclick = function(){
+                    var core = prompt("填入憨批文章的主题");
+
+                    var event = prompt("填入事件");
+
+                    var describe = prompt("填入关于主题的描述");
+
+                    var title = core + event
+
+                    document.write(title + "是怎么回事呢？" + core + "相信大家都很熟悉，但是"+ title + "是怎么回事呢，下面就让小编带大家一起了解吧。<br/>"
+                     + title + "，其实就是" + describe + "，大家可能会很惊讶" + core + "怎么可以" + event + "呢？但事实就是这样，小编也感到非常惊讶。<br/>"
+                     + "这就是关于" + title + "的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！")
+                }
+            </script>
+        </center>
+    </font>
+</body>
+</html>

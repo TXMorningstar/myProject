@@ -11,11 +11,17 @@
                 var button = document.getElementById('start')
                 button.onclick = function(){
                     var core = prompt("填入憨批文章的主题");
-
+                    if(core == null){
+                        core = '___'
+                    }
                     var event = prompt("填入事件");
-
+                    if(event == null){
+                        event = '___'
+                    }
                     var describe = prompt("填入关于主题的描述");
-
+                    if(describe == null){
+                        describe = '___'
+                    }
                     var title = core + event
 
                     document.write(title + "是怎么回事呢？" + core + "相信大家都很熟悉，但是"+ title + "是怎么回事呢，下面就让小编带大家一起了解吧。<br/>"
